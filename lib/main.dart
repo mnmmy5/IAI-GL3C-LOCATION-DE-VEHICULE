@@ -1,6 +1,6 @@
-//import 'package:carrent/pages/home/home_page.dart';
+import 'package:carrent/pages/home/home_page.dart';
 import 'package:flutter/material.dart';
-import 'pages/welcome/welcome_page.dart';
+//import 'pages/welcome/welcome_page.dart';
 
 
 void main() {
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       title: 'Y/S LOCATION',
       debugShowCheckedModeBanner: false,
-      home: WelcomePage(),
+      home: HomePage(),
     );
   }
 }
