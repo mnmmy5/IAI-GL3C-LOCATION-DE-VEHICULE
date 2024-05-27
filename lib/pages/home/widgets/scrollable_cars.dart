@@ -23,7 +23,7 @@ class ScrollableCards extends StatelessWidget {
           width: (size.width-16*3)/2,
           heigth: ((size.width-16*3)/2)*0.4,
           title: cars[index].name,
-          subtitle: "${cars[index].price}\XAF/Jour",
+          subtitle: "${cars[index].price}\$/Jour",
           image: cars[index].image,
           );
       }, 

@@ -1,12 +1,12 @@
+import 'package:carrent/pages/home/widgets/car_details_page.dart';
 import 'package:flutter/material.dart';
 import 'package:carrent/models/car.dart';
+
 
 class BrandVehiclesPage extends StatelessWidget {
   final String brand;
 
-  const BrandVehiclesPage({
-    required this.brand,
-     super.key});
+  const BrandVehiclesPage({required this.brand, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,15 +23,25 @@ class BrandVehiclesPage extends StatelessWidget {
           itemCount: brandCars.length,
           itemBuilder: (context, index) {
             final car = brandCars[index];
-            return Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8.0),
-              child: Row(
-                children: [
-                  Image.asset(car.logo, width: 50, height: 50),
-                  const SizedBox(width: 16),
-                  Expanded(child: Text(car.brand)),
-                  Expanded(child: Text(car.name)),
-                ],
+            return GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CarDetailsPage(car: car),
+                  ),
+                );
+              },
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8.0),
+                child: Row(
+                  children: [
+                    Image.asset(car.logo, width: 50, height: 50),
+                    const SizedBox(width: 16),
+                    Expanded(child: Text(car.brand)),
+                    Expanded(child: Text(car.name)),
+                  ],
+                ),
               ),
             );
           },
